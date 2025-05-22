@@ -1,21 +1,30 @@
 # Bank Account Simulator
 
 ## Overview
-Python application banking operations through:
-- **Stateful OOP implementation** with class-based account management
-- **Stateless functional implementation** using pure functions
+Python application demonstrating different banking implementations:
+- **Stateful OOP implementation** with class-based account management and transaction history
+- **Stateless functional implementation** using pure functions and immutable state
 
 ## Features
+- GUI with tabbed interface
+  - Account creation and management
+  - Transaction operations
+  - Transaction history viewer
+  - Mode switching
+- Command Line Interface (CLI)
 - Runtime mode switching between implementations
 - Transaction history in stateful mode
-- Balance validation in both implementations
-- Graphical User Interface
-- Command Line Interface
+- Balance validation with overdraft protection
+
+## Requirements
+- Python 
+- Tkinter (included with Python)
 
 ## Getting Started
 ```bash
 python -m venv venv
 venv\Scripts\activate
+
 pip install -r requirements.txt
 ```
 
@@ -39,7 +48,7 @@ python main.py --cli
 ```python
 account = BankAccount(100)
 account.deposit(50)
-print(account.get_balance())
+print(account.get_balance())  
 ```
 
 ### Functional Mode Example
@@ -56,7 +65,7 @@ print(get_balance(balance))
 - Methods modify internal state
 
 ### Functional Approach
-- Pure functions: deposit(balance, amount) → new_balance
+- Pure functions: deposit → new_balance
 - Immutable balance handling
 - No side effects
 
